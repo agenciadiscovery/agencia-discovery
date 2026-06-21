@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Discovery Travel Agency — Viajes de alto nivel a la medida</title>
+<meta name="description" content="Agencia de viajes en Panamá especializada en experiencias de viaje a la medida para individuos y corporaciones alrededor del mundo, y grupos de graduación a Punta Cana." />
+<link rel="icon" type="image/png" href="assets/logo/favicon.png" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Tailwind (Play CDN) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT: '#0B2A4A', dark: '#071A2E', deep: '#050F1C' },
+          gold: { DEFAULT: '#E8902A', light: '#F4B942' },
+          globe: { DEFAULT: '#3A8FD9', deep: '#1C5A91' },
+          cream: '#F7F4EC',
+        },
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+          serif: ['Playfair Display', 'serif'],
+          mono: ['JetBrains Mono', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+
+<!-- Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-cream text-navy-dark font-sans antialiased">
+
+<!-- Global noise overlay -->
+<svg class="noise-svg" aria-hidden="true">
+  <filter id="noiseFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"></feTurbulence>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#noiseFilter)"></rect>
+</svg>
+
+<!-- ===================== HEADER ===================== -->
+<header id="site-header" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-6xl transition-all duration-500">
+  <div id="header-pill" class="flex items-center justify-between gap-6 px-5 sm:px-7 py-3 rounded-[2rem] border border-white/10 transition-all duration-500">
+    <a href="#top" class="flex items-center gap-3 shrink-0">
+      <img src="assets/logo/logo-discovery.png" alt="Discovery Travel Agency" class="h-9 w-auto">
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 font-medium text-sm text-navy-dark/80">
+      <a href="#destinos" class="nav-link">Destinos</a>
+      <a href="#filosofia" class="nav-link">Nosotros</a>
+      <a href="#graduaciones" class="nav-link">Graduaciones</a>
+      <a href="#reconocimiento" class="nav-link">Reconocimiento</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+    </nav>
+
+    <a href="#contacto" class="btn-magnetic shrink-0 inline-flex items-center gap-2 bg-navy text-cream text-sm font-semibold px-5 py-2.5 rounded-full overflow-hidden relative">
+      <span class="relative z-10">Solicitar cotización</span>
+      <span class="btn-fill absolute inset-0 bg-gold"></span>
+    </a>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section id="top" class="relative h-[100dvh] min-h-[640px] w-full overflow-hidden flex items-end">
+  <div class="absolute inset-0 bg-gradient-to-br from-navy via-navy-dark to-navy-deep" data-replace="assets/images/hero/hero-bg.jpg"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/60 to-navy-deep/10"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-navy-deep/70 via-transparent to-transparent"></div>
+
+  <div class="hero-content relative z-10 max-w-6xl mx-auto px-6 sm:px-10 pb-28 sm:pb-32 w-full">
+    <p class="hero-eyebrow font-mono text-xs sm:text-sm uppercase tracking-[0.35em] text-gold-light mb-6">
+      Panamá · Viajes a la medida desde hace 34 años
+    </p>
+    <div class="flex items-center justify-between gap-6 sm:gap-10">
+      <h1 class="hero-title text-cream font-sans font-extrabold text-[2.6rem] sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-4xl">
+        El mundo, diseñado<br/>
+        <span class="font-serif italic font-medium text-gold-light whitespace-nowrap">a la medida de quien lo vive.</span>
+      </h1>
+      <img src="assets/logo/globe-logo.png" alt="Discovery Travel Agency" class="hidden md:block h-36 lg:h-48 w-auto shrink-0 drop-shadow-2xl">
+    </div>
+    <p class="hero-sub mt-7 max-w-xl text-cream/75 text-base sm:text-lg leading-relaxed">
+      Viajes corporativos, de placer, familiares e individuales a cualquier rincón del mundo — especialistas en cruceros y destinos exóticos, con el mejor servicio 24/7 para que te sientas seguro en cada viaje.
+    </p>
+    <div class="hero-cta mt-10 flex flex-wrap items-center gap-4">
+      <a href="#contacto" class="btn-magnetic inline-flex items-center gap-2 bg-gold text-navy-deep font-semibold px-7 py-3.5 rounded-full relative overflow-hidden">
+        <span class="relative z-10">Planificar mi viaje</span>
+        <span class="btn-fill absolute inset-0 bg-cream"></span>
+      </a>
+      <a href="#destinos" class="inline-flex items-center gap-2 text-cream font-medium px-7 py-3.5 rounded-full border border-cream/30 hover:border-cream/70 transition-colors">
+        Ver destinos <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute bottom-6 right-6 sm:right-10 z-10 hidden sm:flex items-center gap-2 text-cream/60 font-mono text-xs uppercase tracking-widest">
+    <i data-lucide="mouse" class="w-4 h-4"></i> Scroll
+  </div>
+</section>
+
+<!-- ===================== TRUST BAR ===================== -->
+<section class="relative bg-navy-deep py-10 border-b border-white/5">
+  <div class="max-w-6xl mx-auto px-6 sm:px-10 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+    <div class="stat-item">
+      <p class="font-serif italic text-3xl sm:text-4xl text-gold-light">+34</p>
+      <p class="mt-1 font-mono text-[11px] uppercase tracking-widest text-cream/60">Años de trayectoria</p>
+    </div>
+    <div class="stat-item">
+      <p class="font-serif italic text-3xl sm:text-4xl text-gold-light">24/7</p>
+      <p class="mt-1 font-mono text-[11px] uppercase tracking-widest text-cream/60">Servicio y acompañamiento</p>
+    </div>
+    <div class="stat-item">
+      <p class="font-serif italic text-3xl sm:text-4xl text-gold-light">Sin límites</p>
+      <p class="mt-1 font-mono text-[11px] uppercase tracking-widest text-cream/60">Cruceros y destinos fascinantes</p>
+    </div>
+    <div class="stat-item">
+      <p class="font-serif italic text-3xl sm:text-4xl text-gold-light">+100</p>
+      <p class="mt-1 font-mono text-[11px] uppercase tracking-widest text-cream/60">Empresas y colegios atendidos</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VALUE PROPS ===================== -->
+<section class="relative bg-cream py-28 sm:py-36">
+  <div class="max-w-6xl mx-auto px-6 sm:px-10">
+    <div class="max-w-2xl mb-16 fade-up">
+      <p class="font-mono text-xs uppercase tracking-[0.3em] text-gold mb-4">Por qué Discovery</p>
+      <h2 class="font-sans font-extrabold text-3xl sm:text-4xl text-navy leading-tight">
+        No solo vendemos boletos. <span class="font-serif italic font-medium text-navy/70">Vivimos la ilusión de planearlo contigo.</span>
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-6">
+      <article class="feature-card fade-up group rounded-[2rem] border border-navy/10 bg-white p-8 hover:border-gold/40 transition-colors">
+        <div class="w-12 h-12 rounded-2xl bg-navy/5 flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors">
+          <i data-lucide="globe-2" class="w-6 h-6 text-navy"></i>
+        </div>
+        <h3 class="font-semibold text-lg text-navy mb-2">Todo tipo de viaje, a tu medida</h3>
+        <p class="text-sm text-navy/65 leading-relaxed">Corporativos, de placer, familiares e individuales — diseñados destino por destino, a cualquier parte del mundo.</p>
+      </article>
+
+      <article class="feature-card fade-up group rounded-[2rem] border border-navy/10 bg-white p-8 hover:border-gold/40 transition-colors">
+        <div class="w-12 h-12 rounded-2xl bg-navy/5 flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors">
+          <i data-lucide="shield-check" class="w-6 h-6 text-navy"></i>
+        </div>
+        <h3 class="font-semibold text-lg text-navy mb-2">El mejor servicio, 24/7</h3>
+        <p class="text-sm text-navy/65 leading-relaxed">Para que te sientas seguro durante todo tu viaje: un equipo real respaldándote en todas tus necesidades.</p>
+      </article>
+
+      <article class="feature-card fade-up group rounded-[2rem] border border-navy/10 bg-white p-8 hover:border-gold/40 transition-colors">
+        <div class="w-12 h-12 rounded-2xl bg-navy/5 flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors">
+          <i data-lucide="anchor" class="w-6 h-6 text-navy"></i>
+        </div>
+        <h3 class="font-semibold text-lg text-navy mb-2">Los mejores asesorándote en tu crucero ideal.</h3>
+        <p class="text-sm text-navy/65 leading-relaxed">Conocemos cada detalle del barco, ruta e itinerario para ayudarte a elegir el crucero ideal para ti.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FILOSOFÍA ===================== -->
+<section id="filosofia" class="relative bg-navy-deep py-28 sm:py-36 overflow-hidden">
+  <div class="parallax-texture absolute inset-0 opacity-[0.06]"></div>
+  <div class="max-w-6xl mx-auto px-6 sm:px-10 relative z-10">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="fade-up">
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-gold-light mb-5">Nuestra filosofía</p>
+        <h2 class="font-sans font-bold text-3xl sm:text-4xl text-cream leading-tight mb-6">
+          El servicio de paquete masivo<br/>
+          <span class="font-serif italic font-medium text-cream/50">y el servicio Discovery</span>
+        </h2>
+        <p class="text-cream/70 leading-relaxed text-base sm:text-lg max-w-md">
+          Hay una diferencia entre vender un boleto y diseñar una experiencia. Trabajamos con familias, individuos y corporaciones que valoran el detalle, la discreción y la solidez de bastantes años de trayectoria en Panamá — y queremos que se sientan seguros y bien cuidados en cada viaje, sin importar su destino.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="philosophy-card rounded-[2rem] border border-white/10 p-7 bg-white/5">
+          <p class="font-mono text-[10px] uppercase tracking-widest text-cream/40 mb-3">Enfoque genérico</p>
+          <ul class="space-y-2 text-sm text-cream/55">
+            <li>Itinerarios fijos</li>
+            <li>Atención por turnos</li>
+            <li>Soporte en horario de oficina</li>
+          </ul>
+        </div>
+        <div class="philosophy-card rounded-[2rem] border border-gold/30 p-7 bg-gold/10 mt-6 sm:mt-10">
+          <p class="font-mono text-[10px] uppercase tracking-widest text-gold-light mb-3">Enfoque Discovery</p>
+          <ul class="space-y-2 text-sm text-cream/90">
+            <li>Itinerarios diseñados a la medida</li>
+            <li>Asesor dedicado de inicio a fin</li>
+            <li>Soporte 24/7, cualquier zona horaria</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DESTINOS ===================== -->
+<section id="destinos" class="relative bg-cream py-28 sm:py-36">
+  <div class="max-w-6xl mx-auto px-6 sm:px-10">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-14 fade-up">
+      <div class="max-w-xl">
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-gold mb-4">Destinos</p>
+        <h2 class="font-sans font-extrabold text-3xl sm:text-4xl text-navy leading-tight">El mundo a tus pies, tú eliges dónde.</h2>
+      </div>
+      <p class="text-sm text-navy/60 max-w-sm">Algunos de nuestros favoritos — viajamos a cualquier destino del planeta, sin límite de continente, especializándonos en cruceros y viajes a la medida.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="destino-card group relative rounded-[2.5rem] overflow-hidden h-[420px]">
+        <img src="assets/images/destinos/europa.jpg" alt="Santorini, Grecia" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/10 to-transparent"></div>
+        <div class="absolute bottom-7 left-7 right-7">
+          <p class="font-mono text-[10px] uppercase tracking-widest text-gold-light mb-1">01 — Europa</p>
+          <h3 class="font-serif italic text-2xl text-cream">Mediterráneo &amp; capitales clásicas</h3>
+        </div>
+      </div>
+
+      <div class="destino-card group relative rounded-[2.5rem] overflow-hidden h-[420px]">
+        <img src="assets/images/destinos/asia.jpg" alt="Terrazas de arroz en Bali" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/10 to-transparent"></div>
+        <div class="absolute bottom-7 left-7 right-7">
+          <p class="font-mono text-[10px] uppercase tracking-widest text-gold-light mb-1">02 — Asia</p>
+          <h3 class="font-serif italic text-2xl text-cream">Oriente, lujo y tradición</h3>
+        </div>
+      </div>
+
+      <div class="destino-card group relative rounded-[2.5rem] overflow-hidden h-[420px]">
+        <img src="assets/images/destinos/america.jpg" alt="Machu Picchu, Perú" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/10 to-transparent"></div>
+        <div class="absolute bottom-7 left-7 right-7">
+          <p class="font-mono text-[10px] uppercase tracking-widest text-gold-light mb-1">03 — América</p>
+          <h3 class="font-serif italic text-2xl text-cream">Del Caribe a los Andes</h3>
+        </div>
+      </div>
+
+      <div class="destino-card group relative rounded-[2.5rem] overflow-hidden h-[420px]">
+        <img src="assets/images/destinos/cruceros.jpg" alt="Crucero de lujo en el mar" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/10 to-transparent"></div>
+        <div class="absolute bottom-7 left-7 right-7">
+          <p class="font-mono text-[10px] uppercase tracking-widest text-gold-light mb-1">04 — Cruceros</p>
+          <h3 class="font-serif italic text-2xl text-cream">De lago, río y océano</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GRUPOS DE GRADUACIÓN — PUNTA CANA ===================== -->
+<section id="graduaciones" class="relative bg-navy-dark py-16 sm:py-20 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 sm:px-10 relative z-10">
+    <div class="mb-6">
+      <div class="fade-up">
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-gold-light mb-4">Grupos de graduación</p>
+        <h2 class="font-sans font-bold text-3xl sm:text-4xl text-cream leading-tight mb-6">
+          Cada año, llevamos a los graduandos<br/>
+          <span class="font-serif italic font-medium text-cream/60">a vivir Punta Cana.</span>
+        </h2>
+        <p class="text-cream/70 leading-relaxed max-w-md">
+          Coordinamos el viaje de graduación de principio a fin: logística, seguridad, hospedaje y actividades — trabajando con el operador #1 en Punta Cana, con atención 24/7 en todo momento.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+      <div class="fade-up rounded-[1.75rem] h-48 sm:h-64 overflow-hidden">
+        <img src="assets/images/punta-cana/grupo-1.jpg" alt="Graduandos celebrando en Punta Cana" class="w-full h-full object-cover">
+      </div>
+      <div class="fade-up rounded-[1.75rem] h-48 sm:h-64 overflow-hidden">
+        <img src="assets/images/punta-cana/grupo-2.jpg" alt="Grupo de graduandos en la playa" class="w-full h-full object-cover">
+      </div>
+      <div class="fade-up rounded-[1.75rem] h-48 sm:h-64 overflow-hidden">
+        <img src="assets/images/punta-cana/playa-1.jpg" alt="Actividad acuática en Punta Cana" class="w-full h-full object-cover">
+      </div>
+      <div class="fade-up rounded-[1.75rem] h-48 sm:h-64 overflow-hidden">
+        <img src="assets/images/punta-cana/grupo-3.jpg" alt="Graduandos en fiesta nocturna" class="w-full h-full object-cover">
+      </div>
+      <div class="fade-up rounded-[1.75rem] h-48 sm:h-64 overflow-hidden">
+        <img src="assets/images/punta-cana/grupo-4.jpg" alt="Graduandos con el cartel de Discovery Travel Agency" class="w-full h-full object-cover">
+      </div>
+      <div class="fade-up rounded-[1.75rem] h-48 sm:h-64 overflow-hidden">
+        <img src="assets/images/punta-cana/grupo-5.jpg" alt="Graduandos celebrando con confeti" class="w-full h-full object-cover">
+      </div>
+    </div>
+
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdYnz6IWPeLGwgjTiiGJC1JKsAhV32DQN5TwMukMAItk5M0hg/formResponse?pli=1" target="_blank" rel="noopener" class="btn-magnetic inline-flex items-center gap-2 bg-gold text-navy-deep font-semibold px-7 py-3.5 rounded-full relative overflow-hidden">
+        <span class="relative z-10">Registrarse para viaje 2026</span>
+        <span class="btn-fill absolute inset-0 bg-cream"></span>
+      </a>
+      <a href="assets/docs/punta-cana-2026.pdf" target="_blank" rel="noopener" class="btn-magnetic inline-flex items-center gap-2 border border-cream/25 text-cream font-semibold px-7 py-3.5 rounded-full relative overflow-hidden">
+        <span class="relative z-10 flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4"></i> Ver itinerario Punta Cana</span>
+        <span class="btn-fill absolute inset-0 bg-cream"></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CORPORATIVO ===================== -->
+<section id="reconocimiento" class="relative bg-cream py-28 sm:py-36">
+  <div class="max-w-6xl mx-auto px-6 sm:px-10">
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+      <div class="order-2 lg:order-1 rounded-[2.5rem] h-[420px] overflow-hidden">
+        <img src="assets/images/reconocimiento/reconocimiento-1.jpg" alt="Equipo de Viajes Discovery recibiendo reconocimiento de Air Europa" class="w-full h-full object-cover">
+      </div>
+      <div class="order-1 lg:order-2 fade-up">
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-gold mb-4">Reconocimiento</p>
+        <h2 class="font-sans font-extrabold text-3xl sm:text-4xl text-navy leading-tight mb-6">
+          Reconocida por aerolíneas y líneas de cruceros en todo Panamá.
+        </h2>
+        <p class="text-navy/65 leading-relaxed max-w-md mb-8">
+          Viajes Discovery ha sido reconocida en Panamá por innumerables aerolíneas y líneas de cruceros como una de las agencias de mayor volumen y confianza del país — un respaldo que se traduce en mejores tarifas, prioridad y beneficios exclusivos para cada uno de nuestros clientes.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-sm text-navy/80"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Entre las agencias de mayor volumen de ventas del país</li>
+          <li class="flex items-center gap-3 text-sm text-navy/80"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Relación directa con aerolíneas y líneas de cruceros</li>
+          <li class="flex items-center gap-3 text-sm text-navy/80"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Beneficios y prioridad exclusiva para nuestros clientes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA FINAL ===================== -->
+<section id="contacto" class="relative bg-navy-deep py-28 sm:py-32 overflow-hidden">
+  <div class="parallax-texture absolute inset-0 opacity-[0.06]"></div>
+  <div class="max-w-4xl mx-auto px-6 sm:px-10 text-center relative z-10 fade-up">
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-gold-light mb-5">Empecemos</p>
+    <h2 class="font-sans font-bold text-3xl sm:text-5xl text-cream leading-tight mb-7">
+      Tu próximo viaje, <span class="font-serif italic font-medium text-gold-light">diseñado a tu medida.</span>
+    </h2>
+    <p class="text-cream/70 max-w-lg mx-auto mb-10">Cuéntanos qué tienes en mente — individual, corporativo o grupo de graduación — y un asesor de Discovery te contacta directamente.</p>
+    <a href="mailto:info@viajesdiscovery.com" class="btn-magnetic inline-flex items-center gap-2 bg-gold text-navy-deep font-semibold px-8 py-4 rounded-full relative overflow-hidden">
+      <span class="relative z-10">Solicitar cotización</span>
+      <span class="btn-fill absolute inset-0 bg-cream"></span>
+    </a>
+    <div class="mt-8 flex flex-col items-center gap-1.5 text-sm text-cream/55">
+      <a href="tel:+5072699199" class="inline-flex items-center gap-2 hover:text-gold-light"><i data-lucide="phone" class="w-4 h-4"></i> +507 269 9199</a>
+      <span class="font-mono text-[11px] uppercase tracking-widest text-cream/40 text-center">Lun – Vie 8:00am – 6:00pm<br/>Sáb 8:00am – 1:00pm</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="relative bg-navy-deep rounded-t-[2.5rem] sm:rounded-t-[3rem] pt-16 pb-8 border-t border-white/10">
+  <div class="max-w-6xl mx-auto px-6 sm:px-10">
+    <div class="grid sm:grid-cols-4 gap-10 mb-14">
+      <div class="col-span-2">
+        <img src="assets/logo/globe-logo.png" alt="Discovery Travel Agency" class="h-16 w-auto">
+        <p class="text-cream/55 text-sm leading-relaxed mt-5 max-w-xs">Agencia de viajes panameña con más de 33 años diseñando experiencias a la medida para individuos, corporaciones y grupos de graduación.</p>
+      </div>
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-widest text-cream/40 mb-4">Navegación</p>
+        <ul class="space-y-2 text-sm text-cream/65">
+          <li><a href="#destinos" class="hover:text-gold-light">Destinos</a></li>
+          <li><a href="#filosofia" class="hover:text-gold-light">Nosotros</a></li>
+          <li><a href="#graduaciones" class="hover:text-gold-light">Graduaciones</a></li>
+          <li><a href="#reconocimiento" class="hover:text-gold-light">Reconocimiento</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-widest text-cream/40 mb-4">Contacto</p>
+        <ul class="space-y-2 text-sm text-cream/65">
+          <li>Plaza Mont Blanc, Obarrio, Panamá</li>
+          <li><a href="tel:+5072699199" class="hover:text-gold-light">+507 269 9199</a></li>
+          <li>info@viajesdiscovery.com</li>
+          <li class="text-cream/45 pt-1">Lun – Vie: 8:00am – 6:00pm<br/>Sáb: 8:00am – 1:00pm</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-white/10">
+      <p class="text-cream/40 text-xs">© <span id="year"></span> Discovery Travel Agency. Todos los derechos reservados.</p>
+      <div class="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-cream/50">
+        <span class="status-dot"></span> Atención disponible 24/7
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

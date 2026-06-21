@@ -1,0 +1,186 @@
+:root {
+  --navy: #0B2A4A;
+  --navy-dark: #0F2238;
+  --navy-deep: #050F1C;
+  --gold: #E8902A;
+  --gold-light: #F4B942;
+  --cream: #F7F4EC;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+}
+
+/* ---------- Tailwind color fallbacks (Play CDN sometimes needs explicit utility) ---------- */
+.bg-navy { background-color: var(--navy); }
+.bg-navy-dark { background-color: var(--navy-dark); }
+.bg-navy-deep { background-color: var(--navy-deep); }
+.text-navy { color: var(--navy); }
+.text-navy-dark { color: var(--navy-dark); }
+.text-gold { color: var(--gold); }
+.text-gold-light { color: var(--gold-light); }
+.bg-gold { background-color: var(--gold); }
+.bg-cream { background-color: var(--cream); }
+.text-cream { color: var(--cream); }
+.border-gold { border-color: var(--gold); }
+
+/* ---------- Global noise overlay ---------- */
+.noise-svg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+}
+
+/* ---------- Header ---------- */
+#header-pill {
+  background: rgba(11, 42, 74, 0.0);
+}
+#header-pill.scrolled {
+  background: rgba(247, 244, 236, 0.85);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 30px rgba(5, 15, 28, 0.12);
+}
+#header-pill.scrolled .nav-link,
+#header-pill.scrolled a span.font-serif {
+  color: var(--navy);
+}
+#header-pill:not(.scrolled) {
+  background: rgba(247, 244, 236, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+#header-pill:not(.scrolled) .nav-link {
+  color: rgba(247, 244, 236, 0.85);
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: var(--gold);
+}
+
+/* ---------- Buttons ---------- */
+.btn-magnetic {
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.btn-magnetic:hover {
+  transform: scale(1.03);
+}
+.btn-fill {
+  transform: translateX(-101%);
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 0;
+  border-radius: inherit;
+}
+.btn-magnetic:hover .btn-fill {
+  transform: translateX(0);
+}
+.btn-magnetic span.relative {
+  transition: color 0.3s ease;
+}
+.btn-magnetic:hover span.relative {
+  mix-blend-mode: difference;
+  color: white;
+}
+
+/* ---------- Image placeholders ---------- */
+.img-placeholder {
+  position: relative;
+  background: linear-gradient(135deg, rgba(11, 42, 74, 0.92), rgba(58, 143, 217, 0.55));
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+.img-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px dashed rgba(247, 244, 236, 0.25);
+  margin: 10px;
+  border-radius: inherit;
+}
+.ph-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(247, 244, 236, 0.75);
+  text-align: center;
+  max-width: 80%;
+  line-height: 1.5;
+}
+
+/* ---------- Philosophy texture ---------- */
+.parallax-texture {
+  background-image: radial-gradient(circle at 20% 20%, rgba(232, 144, 42, 0.25), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(58, 143, 217, 0.25), transparent 40%);
+}
+
+/* ---------- School chips ---------- */
+.school-chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  border: 1px solid rgba(244, 185, 66, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: rgba(244, 185, 66, 0.06);
+}
+
+/* ---------- Badge chips (awards) ---------- */
+.badge-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--navy);
+  border: 1px solid rgba(11, 42, 74, 0.15);
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(232, 144, 42, 0.08);
+}
+
+/* ---------- Status dot ---------- */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3ED598;
+  box-shadow: 0 0 0 0 rgba(62, 213, 152, 0.7);
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 rgba(62, 213, 152, 0.55); }
+  70% { box-shadow: 0 0 0 8px rgba(62, 213, 152, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(62, 213, 152, 0); }
+}
+
+/* ---------- Scroll-in animations (fallback if GSAP fails to load) ---------- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+}
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}

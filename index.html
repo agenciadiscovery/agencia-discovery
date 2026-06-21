@@ -51,9 +51,9 @@
 
 <!-- ===================== HEADER ===================== -->
 <header id="site-header" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-6xl transition-all duration-500">
-  <div id="header-pill" class="flex items-center justify-between gap-6 px-5 sm:px-7 py-3 rounded-[2rem] border border-white/10 transition-all duration-500">
+  <div id="header-pill" class="flex items-center justify-between gap-4 sm:gap-6 px-4 sm:px-7 py-3 rounded-[2rem] border border-white/10 transition-all duration-500">
     <a href="#top" class="flex items-center gap-3 shrink-0">
-      <img src="assets/logo/logo-discovery.png" alt="Discovery Travel Agency" class="h-9 w-auto">
+      <img src="assets/logo/logo-discovery.png" alt="Discovery Travel Agency" class="h-8 sm:h-9 w-auto">
     </a>
 
     <nav class="hidden lg:flex items-center gap-7 font-medium text-sm text-navy-dark/80">
@@ -64,34 +64,53 @@
       <a href="#contacto" class="nav-link">Contacto</a>
     </nav>
 
-    <a href="#contacto" class="btn-magnetic shrink-0 inline-flex items-center gap-2 bg-navy text-cream text-sm font-semibold px-5 py-2.5 rounded-full overflow-hidden relative">
+    <a href="#contacto" class="hidden lg:inline-flex btn-magnetic shrink-0 items-center gap-2 bg-navy text-cream text-sm font-semibold px-5 py-2.5 rounded-full overflow-hidden relative">
       <span class="relative z-10">Solicitar cotización</span>
       <span class="btn-fill absolute inset-0 bg-gold"></span>
     </a>
+
+    <button id="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" class="lg:hidden shrink-0 flex items-center justify-center w-10 h-10 rounded-full">
+      <i data-lucide="menu" id="menu-icon-open" class="w-5 h-5"></i>
+      <i data-lucide="x" id="menu-icon-close" class="w-5 h-5 hidden"></i>
+    </button>
   </div>
+
+  <nav id="mobile-menu" class="hidden lg:hidden mt-3 rounded-[1.75rem] border border-navy/10 bg-cream/95 backdrop-blur-xl shadow-xl overflow-hidden">
+    <div class="flex flex-col p-2">
+      <a href="#destinos" class="mobile-nav-link">Destinos</a>
+      <a href="#filosofia" class="mobile-nav-link">Nosotros</a>
+      <a href="#graduaciones" class="mobile-nav-link">Graduaciones</a>
+      <a href="#reconocimiento" class="mobile-nav-link">Reconocimiento</a>
+      <a href="#contacto" class="mobile-nav-link">Contacto</a>
+      <a href="#contacto" class="btn-magnetic mt-2 inline-flex items-center justify-center gap-2 bg-navy text-cream text-sm font-semibold px-5 py-3 rounded-full overflow-hidden relative">
+        <span class="relative z-10">Solicitar cotización</span>
+        <span class="btn-fill absolute inset-0 bg-gold"></span>
+      </a>
+    </div>
+  </nav>
 </header>
 
 <!-- ===================== HERO ===================== -->
-<section id="top" class="relative h-[100dvh] min-h-[640px] w-full overflow-hidden flex items-end">
+<section id="top" class="relative h-[100dvh] min-h-[560px] sm:min-h-[640px] w-full overflow-hidden flex items-end">
   <div class="absolute inset-0 bg-gradient-to-br from-navy via-navy-dark to-navy-deep" data-replace="assets/images/hero/hero-bg.jpg"></div>
   <div class="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/60 to-navy-deep/10"></div>
   <div class="absolute inset-0 bg-gradient-to-r from-navy-deep/70 via-transparent to-transparent"></div>
 
-  <div class="hero-content relative z-10 max-w-6xl mx-auto px-6 sm:px-10 pb-28 sm:pb-32 w-full">
-    <p class="hero-eyebrow font-mono text-xs sm:text-sm uppercase tracking-[0.35em] text-gold-light mb-6">
+  <div class="hero-content relative z-10 max-w-6xl mx-auto px-6 sm:px-10 pb-14 sm:pb-32 w-full">
+    <p class="hero-eyebrow font-mono text-xs sm:text-sm uppercase tracking-[0.35em] text-gold-light mb-4 sm:mb-6">
       Panamá · Viajes a la medida desde hace 34 años
     </p>
     <div class="flex items-center justify-between gap-6 sm:gap-10">
-      <h1 class="hero-title text-cream font-sans font-extrabold text-[2.6rem] sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-4xl">
+      <h1 class="hero-title text-cream font-sans font-extrabold text-[1.85rem] sm:text-5xl lg:text-6xl leading-[1.15] sm:leading-[1.05] tracking-tight max-w-4xl">
         El mundo, diseñado<br/>
-        <span class="font-serif italic font-medium text-gold-light whitespace-nowrap">a la medida de quien lo vive.</span>
+        <span class="font-serif italic font-medium text-gold-light sm:whitespace-nowrap">a la medida de quien lo vive.</span>
       </h1>
       <img src="assets/logo/globe-logo.png" alt="Discovery Travel Agency" class="hidden md:block h-36 lg:h-48 w-auto shrink-0 drop-shadow-2xl">
     </div>
-    <p class="hero-sub mt-7 max-w-xl text-cream/75 text-base sm:text-lg leading-relaxed">
+    <p class="hero-sub mt-4 sm:mt-7 max-w-xl text-cream/75 text-sm sm:text-lg leading-relaxed">
       Viajes corporativos, de placer, familiares e individuales a cualquier rincón del mundo — especialistas en cruceros y destinos exóticos, con el mejor servicio 24/7 para que te sientas seguro en cada viaje.
     </p>
-    <div class="hero-cta mt-10 flex flex-wrap items-center gap-4">
+    <div class="hero-cta mt-6 sm:mt-10 flex flex-wrap items-center gap-4">
       <a href="#contacto" class="btn-magnetic inline-flex items-center gap-2 bg-gold text-navy-deep font-semibold px-7 py-3.5 rounded-full relative overflow-hidden">
         <span class="relative z-10">Planificar mi viaje</span>
         <span class="btn-fill absolute inset-0 bg-cream"></span>
@@ -130,9 +149,9 @@
 </section>
 
 <!-- ===================== VALUE PROPS ===================== -->
-<section class="relative bg-cream py-28 sm:py-36">
+<section class="relative bg-cream py-14 sm:py-36">
   <div class="max-w-6xl mx-auto px-6 sm:px-10">
-    <div class="max-w-2xl mb-16 fade-up">
+    <div class="max-w-2xl mb-8 sm:mb-16 fade-up">
       <p class="font-mono text-xs uppercase tracking-[0.3em] text-gold mb-4">Por qué Discovery</p>
       <h2 class="font-sans font-extrabold text-3xl sm:text-4xl text-navy leading-tight">
         No solo vendemos boletos. <span class="font-serif italic font-medium text-navy/70">Vivimos la ilusión de planearlo contigo.</span>
@@ -168,7 +187,7 @@
 </section>
 
 <!-- ===================== FILOSOFÍA ===================== -->
-<section id="filosofia" class="relative bg-navy-deep py-28 sm:py-36 overflow-hidden">
+<section id="filosofia" class="relative bg-navy-deep py-14 sm:py-36 overflow-hidden">
   <div class="parallax-texture absolute inset-0 opacity-[0.06]"></div>
   <div class="max-w-6xl mx-auto px-6 sm:px-10 relative z-10">
     <div class="grid md:grid-cols-2 gap-16 items-center">
@@ -206,9 +225,9 @@
 </section>
 
 <!-- ===================== DESTINOS ===================== -->
-<section id="destinos" class="relative bg-cream py-28 sm:py-36">
+<section id="destinos" class="relative bg-cream py-14 sm:py-36">
   <div class="max-w-6xl mx-auto px-6 sm:px-10">
-    <div class="flex flex-wrap items-end justify-between gap-6 mb-14 fade-up">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-8 sm:mb-14 fade-up">
       <div class="max-w-xl">
         <p class="font-mono text-xs uppercase tracking-[0.3em] text-gold mb-4">Destinos</p>
         <h2 class="font-sans font-extrabold text-3xl sm:text-4xl text-navy leading-tight">El mundo a tus pies, tú eliges dónde.</h2>
@@ -217,7 +236,7 @@
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="destino-card group relative rounded-[2.5rem] overflow-hidden h-[420px]">
+      <div class="destino-card group relative rounded-[2.5rem] overflow-hidden h-[280px] sm:h-[420px]">
         <img src="assets/images/destinos/europa.jpg" alt="Santorini, Grecia" class="absolute inset-0 w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/10 to-transparent"></div>
         <div class="absolute bottom-7 left-7 right-7">
@@ -226,7 +245,7 @@
         </div>
       </div>
 
-      <div class="destino-card group relative rounded-[2.5rem] overflow-hidden h-[420px]">
+      <div class="destino-card group relative rounded-[2.5rem] overflow-hidden h-[280px] sm:h-[420px]">
         <img src="assets/images/destinos/asia.jpg" alt="Terrazas de arroz en Bali" class="absolute inset-0 w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/10 to-transparent"></div>
         <div class="absolute bottom-7 left-7 right-7">
@@ -235,7 +254,7 @@
         </div>
       </div>
 
-      <div class="destino-card group relative rounded-[2.5rem] overflow-hidden h-[420px]">
+      <div class="destino-card group relative rounded-[2.5rem] overflow-hidden h-[280px] sm:h-[420px]">
         <img src="assets/images/destinos/america.jpg" alt="Machu Picchu, Perú" class="absolute inset-0 w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/10 to-transparent"></div>
         <div class="absolute bottom-7 left-7 right-7">
@@ -244,7 +263,7 @@
         </div>
       </div>
 
-      <div class="destino-card group relative rounded-[2.5rem] overflow-hidden h-[420px]">
+      <div class="destino-card group relative rounded-[2.5rem] overflow-hidden h-[280px] sm:h-[420px]">
         <img src="assets/images/destinos/cruceros.jpg" alt="Crucero de lujo en el mar" class="absolute inset-0 w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/10 to-transparent"></div>
         <div class="absolute bottom-7 left-7 right-7">
@@ -257,7 +276,7 @@
 </section>
 
 <!-- ===================== GRUPOS DE GRADUACIÓN — PUNTA CANA ===================== -->
-<section id="graduaciones" class="relative bg-navy-dark py-16 sm:py-20 overflow-hidden">
+<section id="graduaciones" class="relative bg-navy-dark py-10 sm:py-20 overflow-hidden">
   <div class="max-w-6xl mx-auto px-6 sm:px-10 relative z-10">
     <div class="mb-6">
       <div class="fade-up">
@@ -307,10 +326,10 @@
 </section>
 
 <!-- ===================== CORPORATIVO ===================== -->
-<section id="reconocimiento" class="relative bg-cream py-28 sm:py-36">
+<section id="reconocimiento" class="relative bg-cream py-14 sm:py-36">
   <div class="max-w-6xl mx-auto px-6 sm:px-10">
     <div class="grid lg:grid-cols-2 gap-14 items-center">
-      <div class="order-2 lg:order-1 rounded-[2.5rem] h-[420px] overflow-hidden">
+      <div class="order-2 lg:order-1 rounded-[2.5rem] h-[280px] sm:h-[420px] overflow-hidden">
         <img src="assets/images/reconocimiento/reconocimiento-1.jpg" alt="Equipo de Viajes Discovery recibiendo reconocimiento de Air Europa" class="w-full h-full object-cover">
       </div>
       <div class="order-1 lg:order-2 fade-up">
@@ -332,7 +351,7 @@
 </section>
 
 <!-- ===================== CTA FINAL ===================== -->
-<section id="contacto" class="relative bg-navy-deep py-28 sm:py-32 overflow-hidden">
+<section id="contacto" class="relative bg-navy-deep py-14 sm:py-32 overflow-hidden">
   <div class="parallax-texture absolute inset-0 opacity-[0.06]"></div>
   <div class="max-w-4xl mx-auto px-6 sm:px-10 text-center relative z-10 fade-up">
     <p class="font-mono text-xs uppercase tracking-[0.3em] text-gold-light mb-5">Empecemos</p>

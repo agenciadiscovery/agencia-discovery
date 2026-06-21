@@ -69,6 +69,29 @@ body {
   color: var(--gold);
 }
 
+/* ---------- Mobile menu ---------- */
+#menu-toggle {
+  color: rgba(247, 244, 236, 0.9);
+  border: 1px solid rgba(247, 244, 236, 0.25);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+#header-pill.scrolled #menu-toggle {
+  color: var(--navy);
+  border-color: rgba(11, 42, 74, 0.15);
+}
+.mobile-nav-link {
+  display: block;
+  padding: 0.85rem 1rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--navy);
+  transition: background-color 0.2s ease;
+}
+.mobile-nav-link:hover {
+  background: rgba(11, 42, 74, 0.06);
+}
+
 /* ---------- Buttons ---------- */
 .btn-magnetic {
   transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
